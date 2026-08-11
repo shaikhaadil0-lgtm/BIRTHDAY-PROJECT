@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090912">
+<title>For You Charu ❤️ — The Little Birthday Secret</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+:root{--bg:#080914;--text:#f8f5ff;--muted:#aaa8bb;--line:#ffffff20;--accent:#e4d2ff;--pink:#ffb7d8;--gold:#ffd98a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 20% 10%,#9278ff25,transparent 32%),radial-gradient(circle at 85% 25%,#ff91c61a,transparent 28%),linear-gradient(#070811,#0b0c1b 55%,#070811);color:var(--text);font-family:Inter,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.3;background-image:radial-gradient(circle,#fff 0 1px,transparent 1.5px);background-size:95px 95px;mask-image:linear-gradient(#fff,transparent 75%)}
+.screen,.final{min-height:100svh;display:grid;place-items:center;padding:28px 20px;position:relative}.hero,.final>div{max-width:720px;text-align:center;position:relative;z-index:2}
+.kicker,.eyebrow{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:#aaa3bd}.kicker{margin-bottom:20px}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:600}h1{font-size:clamp(3.4rem,14vw,7rem);line-height:.86;margin:0 0 24px}h1 span{display:block;color:var(--accent)}
+.lead{color:var(--muted);line-height:1.8;max-width:460px;margin:0 auto 30px}.btn{border:1px solid #ffffff30;background:#ffffff0d;color:#fff;padding:14px 21px;border-radius:999px;font:600 .9rem Inter;cursor:pointer;backdrop-filter:blur(14px);transition:.3s}.btn:hover{transform:translateY(-2px);background:#ffffff18}
+.butterfly{position:fixed;z-index:1;pointer-events:none;font-size:22px;opacity:.5;animation:float 12s ease-in-out infinite}.b1{left:8%;top:22%}.b2{right:9%;top:34%;animation-delay:-4s}.b3{left:18%;bottom:17%;animation-delay:-7s}.b4{right:17%;bottom:12%;animation-delay:-2s}@keyframes float{50%{transform:translate(18px,-35px) rotate(8deg)}}
+section{max-width:820px;margin:auto;padding:100px 22px}.eyebrow{margin-bottom:14px}h2{font-size:clamp(2.6rem,10vw,4.8rem);line-height:.95;margin:0 0 25px}p{line-height:1.85;color:#c5c2cf}
+.card{background:linear-gradient(145deg,#ffffff13,#ffffff06);border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 24px 80px #00000040;backdrop-filter:blur(18px)}
+.poem{font:500 clamp(1.45rem,5vw,2.05rem)/1.55 "Cormorant Garamond",serif;text-align:center;color:#f4efff}.poem span{display:block;opacity:0;transform:translateY(10px);transition:.7s}.poem.show span{opacity:1;transform:none}.poem span:nth-child(2){transition-delay:.2s}.poem span:nth-child(3){transition-delay:.4s}.poem span:nth-child(4){transition-delay:.6s}.poem span:nth-child(5){transition-delay:.8s}.poem span:nth-child(6){transition-delay:1s}.quote{text-align:center;margin-top:28px;font:1.35rem "Cormorant Garamond",serif;color:#d9cfe9}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.tile{padding:22px;border:1px solid var(--line);border-radius:22px;background:#ffffff0b;cursor:pointer;min-height:160px;transition:.3s}.tile:hover{transform:translateY(-3px)}.tile .icon{font-size:1.7rem}.tile h3{margin:12px 0 7px;font-size:1rem}.tile p{font-size:.84rem;margin:0;color:#aaa7b8}.tile .secret{display:none;color:#eee5ff}.tile.open .secret{display:block}.tile.open .hint{display:none}
+.evidence{display:grid;gap:12px}.chat{padding:18px 20px;border-radius:20px;background:#ffffff0d;border-left:2px solid #d9c8ff99}.chat small{display:block;color:#8e8b9e;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px}.stamp{text-align:center;margin:24px auto 0;border:1px dashed #827b96;color:#a9a1ba;width:max-content;padding:8px 15px;border-radius:999px;font-size:.7rem;letter-spacing:.18em}
+.lang{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.lang button{background:transparent;color:#aaa;border:1px solid var(--line);border-radius:999px;padding:9px 13px}.lang button.active{color:white;background:#ffffff14}.langtext{min-height:90px}
+audio{width:100%;margin:18px 0 8px;filter:invert(1) opacity(.8)}.note{font-size:.72rem;color:#777486}.heart{font-size:2rem;animation:pulse 1.6s infinite;display:inline-block}@keyframes pulse{50%{transform:scale(1.12)}}
+.reveal{opacity:0;transform:translateY(20px);transition:1s}.reveal.visible{opacity:1;transform:none}.final h2{font-size:clamp(3.2rem,13vw,6rem)}.big{font:1.5rem/1.5 "Cormorant Garamond",serif;color:#ddd5e9}footer{text-align:center;padding:25px;color:#6f6c7a;font-size:.72rem}
+
+/* Cake + candle alignment fix */
+.cake-wrap{overflow:visible;text-align:center}
+.cake-stage{
+  width:320px;height:350px;margin:8px auto 0;
+  position:relative;display:flex;align-items:flex-end;justify-content:center;
+  filter:drop-shadow(0 24px 34px #0009)
+}
+.cake{
+  position:absolute;width:250px;height:135px;left:50%;transform:translateX(-50%);bottom:12px;
+  border-radius:22px 22px 30px 30px;
+  background:
+    radial-gradient(circle at 18% 22%,#ffedf6 0 3px,transparent 4px),
+    radial-gradient(circle at 72% 28%,#fff 0 3px,transparent 4px),
+    linear-gradient(to bottom,#fff8fc 0 17px,#ffb8d5 17px 31px,#fff4fa 31px 43px,#ff9fc6 43px 82px,#ff75ae 82px 100%);
+  border:1px solid #ffffff70;
+  box-shadow:inset 0 -9px 0 #df4f91,inset 0 4px 0 #ffffffbb,0 15px 28px #ff75ae33;
+}
+.cake:before{
+  content:"";position:absolute;left:-8px;top:-29px;width:266px;height:55px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 25% 45%,#ffd0e3 0 4px,transparent 5px),
+    radial-gradient(circle at 58% 32%,#ffb0d0 0 4px,transparent 5px),
+    radial-gradient(circle at 78% 52%,#ffd6e7 0 4px,transparent 5px),
+    linear-gradient(#fffdfd,#ffeaf4);
+  box-shadow:0 7px 0 #ea78a9,inset 0 -7px 0 #ffc4dc,0 3px 12px #ff8fbd44;
+}
+.cake:after{
+  content:"♡";position:absolute;left:50%;top:48px;transform:translateX(-50%);
+  font:52px "Cormorant Garamond",serif;color:#fffafd;text-shadow:0 2px 10px #d94f8d
+}
+.cake-stage:before{
+  content:"";position:absolute;width:246px;height:13px;left:50%;
+  bottom:106px;transform:translateX(-50%);border-radius:50%;
+  background:#fff7fb;box-shadow:0 2px 0 #ffafd0,0 5px 0 #f98db9
+}
+.cake-stage:after{
+  content:"✦   •   ✦   •   ✦";position:absolute;left:50%;
+  bottom:34px;transform:translateX(-50%);white-space:nowrap;
+  color:#fff8fb;font-size:15px;letter-spacing:5px;text-shadow:0 2px 8px #c94d88
+}
+.candle{
+  position:absolute;width:15px;height:72px;bottom:157px;z-index:6;
+  border-radius:8px 8px 5px 5px;
+  background:repeating-linear-gradient(135deg,#fff 0 7px,#b99cff 7px 14px);
+  box-shadow:0 2px 5px #0004;
+  transform-origin:50% 100%;
+  transition:transform .18s ease,opacity .2s ease
+}
+/* Three candles: left, exact center, right */
+.c1{left:calc(50% - 90px)}.c2{left:calc(50% - 7.5px)}.c3{left:calc(50% + 75px)}
+.flame{
+  position:absolute;width:20px;height:31px;left:-2.5px;top:-34px;
+  border-radius:50% 50% 48% 48% / 65% 65% 35% 35%;
+  background:linear-gradient(to top,#ff6b28 0%,#ffb52f 48%,#ffe36c 74%,#fff9d9 100%);
+  clip-path:polygon(50% 0,68% 22%,92% 49%,78% 73%,64% 100%,50% 88%,34% 100%,22% 73%,8% 49%,32% 22%);
+  box-shadow:0 0 9px #ffb43d,0 0 22px #ff8d32aa;
+  animation:naturalFlame .72s ease-in-out infinite alternate;
+  transform-origin:50% 100%
+}
+.flame:after{
+  content:"";position:absolute;width:8px;height:14px;left:6px;bottom:4px;
+  border-radius:50%;background:#fff7c9;filter:blur(.3px)
+}
+@keyframes naturalFlame{
+  0%{transform:translateX(-1px) rotate(-3deg) scale(.96)}
+  45%{transform:translateX(1px) rotate(2deg) scale(1.04)}
+  100%{transform:translateX(-.5px) rotate(-2deg) scale(.98)}
+}
+@keyframes blowFlame{
+  0%{transform:translateX(0) rotate(0) scale(1)}
+  35%{transform:translateX(-12px) rotate(-18deg) scale(.85)}
+  70%{transform:translateX(14px) rotate(20deg) scale(.72)}
+  100%{transform:translateX(0) rotate(0) scale(1)}
+}
+.flame.blowing{animation:blowFlame .55s ease-in-out}
+.flame.off{opacity:0;transform:translateY(10px) scale(.15);animation:none}
+
+.evidence{
+  width:100%;max-width:720px;margin:0 auto;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:12px;overflow:visible
+}
+.evidence .chat{
+  width:100%;max-width:620px;min-width:0;margin:0 auto;
+  position:relative;overflow:hidden;padding:22px 24px;
+  align-self:center;overflow-wrap:anywhere
+}
+.evidence .chat b{display:inline}
+.evidence .stamp{margin-left:auto;margin-right:auto;align-self:center;max-width:100%;text-align:center}
+
+.lang{position:relative;z-index:20;pointer-events:auto;justify-content:center;align-items:center}
+.lang button{
+  position:relative;z-index:21;pointer-events:auto;cursor:pointer;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent
+}
+.langtext{position:relative;z-index:1}
+
+.confetti{
+  position:fixed;z-index:9999;pointer-events:none;font-size:22px;
+  animation:confettiFall 2.2s cubic-bezier(.15,.7,.25,1) forwards;
+}
+@keyframes confettiFall{
+  0%{transform:translateY(0) rotate(0deg);opacity:1}
+  100%{transform:translateY(110vh) rotate(720deg);opacity:0}
+}
+
+@media(max-width:560px){
+  .cake-stage{
+    width:100%;
+    max-width:320px;
+    height:340px;
+    margin-left:auto;
+    margin-right:auto;
+    left:0;
+    right:0;
+  }
+  .cake{width:238px;left:50%;transform:translateX(-50%)}.cake:before{width:246px}
+  .cake-stage:before{width:236px}
+  .c1{left:calc(50% - 85px)}.c2{left:calc(50% - 7.5px)}.c3{left:calc(50% + 70px)}
+  .candle{bottom:152px}
+  .evidence{width:100%;max-width:100%;padding-left:0;padding-right:0}
+  .evidence .chat{width:calc(100% - 16px);max-width:620px;padding:20px 20px}
+  .evidence .stamp{font-size:.62rem;letter-spacing:.13em}
+}
+</style>
+</head>
+<body>
+<div class="butterfly b1">🦋</div><div class="butterfly b2">🦋</div><div class="butterfly b3">🦋</div><div class="butterfly b4">🦋</div>
+
+<main>
+<section class="screen" id="top">
+  <div class="hero">
+    <div class="kicker">A tiny birthday mystery · made only for you</div>
+    <h1>Hey,<span>Charu… 🦋</span></h1>
+    <p class="lead">Aaj ki raat thodi special hai.<br>Kyuki aaj duniya ko ek aur saal mil gaya hai <b>tumhari smile dekhne ka.</b></p>
+    <button class="btn" onclick="go('mystery')">Tumhare liye kuch hai →</button>
+  </div>
+</section>
+
+<section id="mystery" class="reveal">
+  <div class="eyebrow">01 · A secret I couldn't keep</div>
+  <h2>Tumhe describe karna…<br>thoda unfair hai.</h2>
+  <div class="card">
+    <div class="poem" id="poem">
+      <span>Tumhari aankhon mein ek ajeeb sa nasha hai,</span>
+      <span>Tumhari baaton mein ek alag sa sukoon hai.</span>
+      <span>Tumhari saadgi hi tumhara sabse haseen andaaz hai,</span>
+      <span>Aur tumhari muskaan… jaise khushi ka ek ehsaas hai.</span>
+      <span>Tumhe kisi cheez se compare karna bhi na-insaafi lage,</span>
+      <span>Kyunki jo khoobsurti tum mein hai, woh kisi misaal mein kahan mile. ❤️</span>
+    </div>
+    <div class="quote">Kuch log khoobsurat lagte hain.<br>Tumhari problem ye hai… tum <i>yaad</i> bhi reh jaati ho. 🤭</div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="eyebrow">02 · Things that secretly remind me of you</div>
+  <h2>Objects toh bas<br>bahana hain.</h2>
+  <div class="grid">
+    <div class="tile" onclick="this.classList.toggle('open')">
+      <div class="icon">🌙</div><h3>Moon</h3><p class="hint">Tap to open</p>
+      <p class="secret">Chaand ko dekh ke pehle khoobsurti yaad aati thi… ab tum yaad aati ho. Bechara chaand competition mein aa gaya. 😌</p>
+    </div>
+    <div class="tile" onclick="this.classList.toggle('open')">
+      <div class="icon">🌷</div><h3>Flower</h3><p class="hint">Tap to open</p>
+      <p class="secret">Phool kitne bhi pyaare ho, tumhari smile ke saamne thode underqualified lagte hain. 🌷🤭</p>
+    </div>
+    <div class="tile" onclick="this.classList.toggle('open')">
+      <div class="icon">✨</div><h3>Fairy lights</h3><p class="hint">Tap to open</p>
+      <p class="secret">Lights room ko roshan karti hain… tum mood ko. Aur honestly, tumhara version zyada useful hai. 🫠</p>
+    </div>
+    <div class="tile" onclick="this.classList.toggle('open')">
+      <div class="icon">📖</div><h3>Diary</h3><p class="hint">Tap to open</p>
+      <p class="secret">Kuch log kahani padhte hain, kuch kahani ban jaate hain. Tum… dono mein thodi dangerous ho. ❤️</p>
+    </div>
+    <div class="tile" onclick="this.classList.toggle('open')">
+      <div class="icon">🎀</div><h3>Ribbon</h3><p class="hint">Tap to open</p>
+      <p class="secret">Ribbon gift ko pretty banata hai… tumhare saath problem ye hai ki tum bina ribbon ke bhi unfairly pretty ho. 😭</p>
+    </div>
+    <div class="tile" onclick="this.classList.toggle('open')">
+      <div class="icon">🪞</div><h3>Mirror</h3><p class="hint">Tap to open</p>
+      <p class="secret">Mirror ka kaam reflection dikhana hai. Tumhara kaam shayad bina permission ke smile chura lena hai. 🫣</p>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="eyebrow">03 · Birthday ritual</div>
+  <h2>Make a wish,<br>Charu. 🎂</h2>
+  <div class="card cake-wrap">
+    <div class="cake-msg">Teen baar blow karna… phir dekhna magic. ✨</div>
+    <div class="cake-stage">
+      <div class="candle c1"><div class="flame"></div></div>
+      <div class="candle c2"><div class="flame"></div></div>
+      <div class="candle c3"><div class="flame"></div></div>
+      <div class="cake"></div>
+    </div>
+    <button class="btn blow" id="blowBtn" onclick="blowCandles()">🌬️ Blow the candles</button>
+    <div class="blow-count" id="blowCount">0 / 3 blows</div>
+    <p class="cake-note" id="cakeNote">Madam ji… thoda dum lagao! 🌬️🕯️</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="eyebrow">04 · Classified evidence</div>
+  <h2>Official report:<br>Madam is special.</h2>
+  <div class="card evidence">
+    <div class="chat"><small>Finding #01</small><b>Smile detected.</b> Side effect: saamne wale ka mood automatically better. 🫠</div>
+    <div class="chat"><small>Finding #02</small><b>Voice detected.</b> Side effect: conversation unnecessarily longer ho jaati hai. 😂</div>
+    <div class="chat"><small>Finding #03</small><b>Smile detected twice.</b> Side effect: bina wajah smile karne ka chance high. 😂</div>
+    <div class="chat"><small>Finding #04</small><b>Madam status: certified cute.</b> Recommendation: zyada serious rehne ki koshish mat karo. 😭😂</div>
+    <div class="stamp">CASE STATUS · BEAUTIFULLY UNSOLVED</div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="eyebrow">05 · Three versions of the same feeling</div>
+  <h2>You,<br>in my languages. 🫶🏻</h2>
+  <div class="card">
+    <div class="lang">
+      <button class="active" data-lang="hi">Hindi</button>
+      <button data-lang="en">English</button>
+      <button data-lang="bho">Bhojpuri</button>
+    </div>
+    <div class="langtext" id="langtext">Tumhari smile ka ek alag hi problem hai… dekhne ke baad banda normal behave nahi kar pata. 😭😂</div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="eyebrow">06 · The wish I actually mean</div>
+  <h2>Aaj sirf birthday nahi…<br>tumhari celebration hai.</h2>
+  <div class="card">
+    <p>Aaj tumhe bohot log wish karenge. Kisi ke message mein flowers honge, kisi ke message mein paragraphs.</p>
+    <p>Mera bas itna kehna hai — <b>tumhe kabhi ye doubt na ho ki tum important ho.</b></p>
+    <p>Tumhari hasi ko kabhi reason ki zarurat na pade, tumhare bad days jaldi beet jaayein, aur tumhe har baar koi aisa mil jaaye jo tumhari khamoshi bhi samajhne ki koshish kare.</p>
+    <p>Aur haan… apni woh cute si pagalpan wali energy kabhi mat badalna. Wahi toh tumhe <b>tum</b> banati hai. 🦋</p>
+    <p style="text-align:center;font:1.45rem 'Cormorant Garamond',serif;color:#eee5f8">“Tum special ho kyunki tum special banne ki koshish nahi karti.”</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="eyebrow">07 · One last thing</div>
+  <h2>Press play. 🎧</h2>
+  <div class="card" style="text-align:center">
+    <div class="heart">♡</div>
+    <p>“Kuch baatein text mein achhi lagti hain… kuch tumhari voice mein.”</p>
+    <audio controls preload="none"><source src="YOUR_AUDIO_FILE.mp3" type="audio/mpeg"></audio>
+    <div class="note">Replace <b>YOUR_AUDIO_FILE.mp3</b> with your own birthday voice note.</div>
+  </div>
+</section>
+
+<section class="final reveal">
+  <div>
+    <div class="eyebrow">08 · Final reveal</div>
+    <h2>Happy Birthday,<br>Arya. 🎂🦋</h2>
+    <div class="big">Aaj ka din tumhara hai.<br>Par ek chhoti si problem hai…<br><b>tumhe celebrate karne ke liye ek din kaafi nahi lagta. ❤️</b></div>
+    <p>Stay soft. Stay crazy. Stay exactly the way you are.</p>
+    <p style="margin-top:32px;color:#d9cfe9;font:1.3rem 'Cormorant Garamond',serif">Aur agar kabhi poochho ki itni mehnat kyun ki…<br>toh jawab simple hai:<br><b>“Kuch log deserve karte hain.”</b> 🫠🦋</p>
+    <button class="btn" onclick="go('top')">Replay your little mystery ↻</button>
+  </div>
+</section>
+</main>
+<footer>Made quietly, with a little mischief and a lot of thought. ♡</footer>
+
+<script>
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');if(e.target.querySelector('#poem'))e.target.querySelector('#poem').classList.add('show')}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(x=>ob.observe(x));
+
+const texts={
+ hi:'Madam ji, aapki smile ka koi solution hai kya? Kyunki dekhte hi mood automatically good ho jaata hai. 😂✨',
+ en:'You have a tiny superpower: somehow you make ordinary moments feel a little more special. That is seriously unfair. 😭✨',
+ bho:'Madam ji, tohar muski mein kauno jaadu ba ka? Dekhte hi moodwa ekdum mast ho jaala. 😂❤️'
+};
+function lang(btn,k){
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const out=document.getElementById('langtext');
+  out.textContent=texts[k];
+  out.animate([{opacity:.2,transform:'translateY(6px)'},{opacity:1,transform:'translateY(0)'}],{duration:280,easing:'ease-out'});
+}
+document.querySelectorAll('.lang button').forEach(btn=>{
+  btn.addEventListener('click',()=>lang(btn,btn.dataset.lang));
+});
+
+let blows=0;
+function blowCandles(){
+  if(blows>=3)return;
+  blows++;
+  document.getElementById('blowCount').textContent=blows+' / 3 blows';
+  const note=document.getElementById('cakeNote');
+  const flames=document.querySelectorAll('.flame');
+
+  flames.forEach((f,i)=>{
+    f.classList.remove('blowing');
+    void f.offsetWidth;
+    f.classList.add('blowing');
+    setTimeout(()=>f.classList.remove('blowing'),650);
+  });
+
+  if(blows===1){
+    note.textContent='Madam ji… thoda dum lagao! 🌬️😂';
+  }
+  if(blows===2){
+    note.textContent='Thoda aur dum lagake fooko yaar! 😂💨';
+  }
+  if(blows===3){
+    note.textContent='Bas! Candles off… wish accepted. 🎉✨';
+    flames.forEach(f=>f.classList.add('off'));
+    document.getElementById('blowBtn').textContent='🎉 Candles are OFF!';
+    confetti();
+  }
+}
+function confetti(){
+  const bits=['🎉','✨','🦋','💗','🎂','🌸','⭐'];
+  for(let i=0;i<35;i++){
+    const x=document.createElement('div');x.className='confetti';x.textContent=bits[Math.floor(Math.random()*bits.length)];
+    x.style.left=Math.random()*100+'vw';x.style.top='-30px';x.style.animationDelay=Math.random()*.45+'s';
+    document.body.appendChild(x);setTimeout(()=>x.remove(),2400);
+  }
+}
+</script>
+</body>
+</html>
